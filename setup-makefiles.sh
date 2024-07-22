@@ -31,6 +31,7 @@ setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}"
 write_headers
 
 cat << EOF >> $PRODUCTMK
+ifeq (\$(ENABLE_NATIVE_BRIDGE),true)
 ifneq (\$(filter %x86_64 %x86_64%,\$(TARGET_PRODUCT)),)
 EOF
 
@@ -57,13 +58,16 @@ PRODUCT_SYSTEM_PROPERTIES += \\
     ro.ndk_translation.version=0.2.3 \\
     ro.ndk_translation.flags=accurate-sigsegv
 endif
+endif
 EOF
 
 cat << EOF >> $BOARDMK
+ifeq (\$(ENABLE_NATIVE_BRIDGE),true)
 ifneq (\$(filter %x86_64 %x86_64%,\$(TARGET_PRODUCT)),)
 TARGET_NATIVE_BRIDGE_ARCH := arm64
 TARGET_NATIVE_BRIDGE_ARCH_VARIANT := armv8-a
 TARGET_NATIVE_BRIDGE_CPU_VARIANT := generic
 TARGET_NATIVE_BRIDGE_ABI := arm64-v8a
+endif
 endif
 EOF
