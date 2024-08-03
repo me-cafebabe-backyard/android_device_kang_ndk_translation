@@ -1,6 +1,5 @@
-# Download: https://dl.google.com/android/repository/sys-img/google_apis/x86_64-34_r13.zip
 # Glob: `ls system/bin/arm*/* system/bin/ndk_translation* system/etc/binfmt_misc/arm* system/etc/cpuinfo.arm* system/etc/ld.config.arm* system/etc/init/ndk_translation*.rc system/lib*/libndk_translation* system/lib*/arm*/*|sort`
-# Version: google/sdk_gphone64_x86_64/emu64xa:14/UE1A.230829.036.A2/11596452:userdebug/dev-keys
+# Version: google/sdk_gpc_x86_64/emu64xa:13/TE2A.221127.025/11790052:userdebug/dev-keys
 
 # ndk_translation
 system/bin/ndk_translation_program_runner_binfmt_misc_arm64
